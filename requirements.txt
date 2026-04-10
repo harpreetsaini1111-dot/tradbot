@@ -3,3 +3,4 @@ pyotp
 pandas
 numpy
 streamlit
+requests

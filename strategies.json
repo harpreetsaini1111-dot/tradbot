@@ -1,0 +1,8 @@
+{
+    "adani": {
+        "buy_price": 0.0,
+        "buy_qty": 5,
+        "dip_percent": 3.0,
+        "target_price": 0.0
+    }
+}

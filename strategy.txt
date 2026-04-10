@@ -1,0 +1,29 @@
+ def trend_strategy(ind):
+    if pd.isna(ind["RSI"]):
+        return "HOLD"
+
+    price = ind["close"]
+    ema = ind["EMA"]
+    rsi = ind["RSI"]
+
+    # 🚫 NEVER SELL IN EXTREME OVERSOLD
+    if rsi < 25:
+        return "HOLD"
+
+    # 🔵 OVERSOLD REVERSAL BUY
+    if 25 <= rsi < 35:
+        return "BUY"
+
+    # 🟢 TREND BUY
+    if price > ema and 55 < rsi < 70:
+        return "BUY"
+
+    # 🔴 OVERBOUGHT EXIT
+    if rsi > 80:
+        return "SELL"
+
+    # 🔴 WEAK EXIT (only mid zone)
+    if price < ema and 45 < rsi < 55:
+        return "SELL"
+
+    return "HOLD"

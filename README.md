@@ -1,0 +1,2 @@
+# tradbot
+trading bot stocks
